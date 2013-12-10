@@ -28,7 +28,7 @@ cd /home/$CONF_DUSER
 [ -d /home/$CONF_DUSER/.config.old ] && rm -Rf /home/$CONF_DUSER/.config.old
 [ -d /home/$CONF_DUSER/.config ] && mv /home/$CONF_DUSER/.config /home/$CONF_DUSER/.config.old
 [ -L /home/$CONF_DUSER/.config ] && rm /home/$CONF_DUSER/.config
-ln -s /opt/${CONF_VM_PROVISIONING_MODULE}/${DEPLOY_ENV_HOSTNAME}/$CONF_PHOME/recipes/$RECIPE/_config /home/$CONF_DUSER/.config
+ln -s /opt/${CONF_VM_PROVISIONING_MODULE}/${DEPLOY_ENV_HOSTNAME}/provision/recipes/$RECIPE/_config /home/$CONF_DUSER/.config
 
 echo "# -------------------------------------------------"
 echo "# END Provisioning RECIPE $RECIPE"

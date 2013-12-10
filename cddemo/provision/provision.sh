@@ -11,9 +11,9 @@ DEPLOY_ENV_DOMAIN_SUFFIX="cd-workshop-heise.net"
 # Customization
 CONFIG_INSTALL_X_DESKTOP=yes
 
-MINIMAL_RECIPE_SET="base-all git-example-project java-oracle maven"
-MINIMAL_RECIPE_SET="base-all"
-X_DESKTOP_RECIPE_SET="x-desktop ide-eclipse"
+MINIMAL_RECIPE_SET="base-all git-example-project java-oracle maven tomcat-local"
+#MINIMAL_RECIPE_SET="tomcat-local"
+#X_DESKTOP_RECIPE_SET=""
 X_DESKTOP_RECIPE_SET="x-desktop"
 
 RECIPES="${MINIMAL_RECIPE_SET}"

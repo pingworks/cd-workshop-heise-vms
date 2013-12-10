@@ -39,6 +39,11 @@ if [ -z "$(cat /etc/ssh/sshd_config | grep UseDNS )" ];then
     echo "UseDNS no" >> /etc/ssh/sshd_config
 fi
 
+install -o $CONF_DUSER -g $CONF_DGROUP -m 0700 -d /home/$CONF_DUSER/.ssh
+install -o $CONF_DUSER -g $CONF_DGROUP -m 0600 $CONF_PHOME/resources/vagrant_id_rsa /home/$CONF_DUSER/.ssh/id_rsa
+install -o $CONF_DUSER -g $CONF_DGROUP -m 0644 $CONF_PHOME/resources/vagrant_id_rsa.pub /home/$CONF_DUSER/.ssh/id_rsa.pub
+
+
 /etc/init.d/ssh restart
 
 if [ ! -d /opt/${CONF_VM_PROVISIONING_MODULE}/.git ];then

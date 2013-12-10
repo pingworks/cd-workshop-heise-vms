@@ -23,7 +23,7 @@ if [ -z "$(cat /etc/passwd | grep git-repo)" ];then
 	git config --system user.name "git-repo user"
 	git config --system user.email "git@localhost"
 	install -o $GIT_USER -g $GIT_USER -m 0700 -d /srv/git-repo/.ssh
-	echo /home/$CONF_DUSER/.ssh/id_rsa.pub >> /srv/git-repo/.ssh/authorized_keys
+	cat $CONF_PHOME/resources/vagrant_id_rsa.pub >> /srv/git-repo/.ssh/authorized_keys
 fi
 
 chown -R $GIT_USER.$GIT_USER /srv/git-repo
