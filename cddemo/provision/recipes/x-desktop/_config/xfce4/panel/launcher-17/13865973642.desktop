@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Eclipse
+Comment=
+Icon=/home/heise/Apps/eclipse/icon.xpm
+Exec=/home/heise/Apps/eclipse/eclipse
+Path=
+Terminal=false
+StartupNotify=true

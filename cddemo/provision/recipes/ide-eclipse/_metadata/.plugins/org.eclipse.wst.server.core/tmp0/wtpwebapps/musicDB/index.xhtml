@@ -1,0 +1,50 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+</h:head>
+
+<h:body>
+	<p:layout fullPage="true">
+		<p:layoutUnit position="north" size="50">
+			<h:outputText value="Simple PrimeFaces Music DB" style="font-size: 28" />
+		</p:layoutUnit>
+		<p:layoutUnit position="center">
+			<h:form id="albumListForm">
+				<p:messages id="messages" autoUpdate="true" />
+				<p:dataTable id="albumList" var="album"
+					value="#{albumController.albumList}"
+					filteredValue="#{albumController.filteredAlbumList}"
+					widgetVar="albumTable" paginator="true" rows="10">
+					<f:facet name="header">
+						<p:outputPanel style="text-align:right;">
+							<h:outputText value="Search all fields:" />
+							<h:inputText id="globalFilter"
+								onkeyup="PF('albumTable').filter()" />
+						</p:outputPanel>
+					</f:facet>
+					<p:column headerText="Artist" sortBy="artist" filterBy="artist"
+						filterMatchMode="contains" filterStyle="display: none;">
+						<h:outputText value="#{album.artist}" />
+					</p:column>
+					<p:column headerText="Title" sortBy="title" filterBy="title"
+						filterMatchMode="contains" filterStyle="display: none;">
+						<h:outputText value="#{album.title}" />
+					</p:column>
+					<p:column headerText="Actions">
+						<p:commandLink action="#{albumController.delete(album)}"
+							update="albumList" value="Delete" />
+					</p:column>
+				</p:dataTable>
+				<p:commandButton id="new" value="New"
+					action="createAlbum?faces-redirect=true" />
+				<p:commandButton id="reset" value="Reset"
+					actionListener="#{albumController.reset}" update="albumList"/>
+			</h:form>
+		</p:layoutUnit>
+	</p:layout>
+</h:body>
+</html>
