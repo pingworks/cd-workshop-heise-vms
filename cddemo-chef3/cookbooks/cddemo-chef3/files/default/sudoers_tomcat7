@@ -1,0 +1,1 @@
+tomcat7  ALL=(ALL) NOPASSWD: /etc/init.d/tomcat7
