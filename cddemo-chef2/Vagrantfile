@@ -85,7 +85,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # switch on debugging if needed
     chef.log_level = :info
 
-    chef.add_recipe "cddemo-chef2"
+    chef.add_recipe "cddemo-chef2::default"
 
   end
 end
