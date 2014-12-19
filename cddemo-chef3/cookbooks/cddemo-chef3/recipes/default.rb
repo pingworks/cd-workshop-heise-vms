@@ -37,6 +37,13 @@ execute 'ifup_eth1' do
   command '/sbin/ifup eth1'
 end
 
+cookbook_file 'hosts' do
+  path '/etc/hosts'
+  owner 'root'
+  group 'root'
+  mode '644'
+end
+
 include_recipe 'tomcat'
 
 # Install bundle download script

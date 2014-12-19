@@ -12,6 +12,8 @@ pre-up sleep 2
 
 # The cddemo network interface
 allow-hotplug eth1
-iface eth1 inet dhcp
-pre-up sleep 2
+auto eth1
+iface eth1 inet static
+  address 10.0.4.20
+  netmask 255.255.255.0
 
