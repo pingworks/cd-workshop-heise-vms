@@ -51,7 +51,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # vb.gui = true
 
     # Name in VirtualBox Gui
-    vb.name = "CD_Demo_Chef2"
+    vb.name = "CD_Demo_Chef3"
  
     # Use VBoxManage to customize the VM:
     vb.memory = 2048
